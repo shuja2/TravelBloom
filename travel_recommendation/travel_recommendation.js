@@ -109,57 +109,67 @@ window.onload = (event) => {
                 image.src = city.imageUrl;
                 description.textContent = city.description;
                 rec_div.id = "recommendation";
+                anchor_tag.href = "#";
+                anchor_tag.textContent = "Visit";
 
                 rec_div.appendChild(image);
                 text_div.appendChild(namee);
                 text_div.appendChild(description);
+                text_div.appendChild(anchor_tag);
                 rec_div.appendChild(text_div);
                 rec_div_parent.appendChild(rec_div);
             })
             rec_div_parent.style.cssText = 'z-index: 999; position: absolute;top: 75px;display: flex;flex-direction: column;right: 80px; width: 40vw ; overflow-y: scroll;';
         })
     }
-        function displayresult(data_passed) {
+    function displayresult(data_passed) {
 
-            rec_div_parent.innerHTML = "";
+        rec_div_parent.innerHTML = "";
 
-            for (const key in data_passed) {
-                if (Object.hasOwnProperty.call(data_passed, key)) {
+        for (const key in data_passed) {
+            if (Object.hasOwnProperty.call(data_passed, key)) {
 
-                    const element = data_passed[key];
+                const element = data_passed[key];
 
-                    var rec_div = document.createElement('div');
-                    var text_div = document.createElement('div');
-                    var namee = document.createElement("h4");
-                    var image = document.createElement("img");
-                    var description = document.createElement("p");
-                    var anchor_tag = document.createElement("a");
-                    namee.textContent = element.name;
-                    image.src = element.imageUrl;
-                    description.textContent = element.description;
-                    rec_div.id = "recommendation";
-                    rec_div.appendChild(image);
-                    text_div.appendChild(namee);
-                    text_div.appendChild(description);
-                    rec_div.appendChild(text_div);
-                    rec_div_parent.appendChild(rec_div);
+                var rec_div = document.createElement('div');
+                var text_div = document.createElement('div');
+                var namee = document.createElement("h4");
+                var image = document.createElement("img");
+                var description = document.createElement("p");
+                var anchor_tag = document.createElement("a");
 
-                    rec_div_parent.style.cssText = 'z-index: 999; position: absolute;top: 75px;display: flex;flex-direction: column;right: 80px; width: 40vw';
+                namee.textContent = element.name;
+                image.src = element.imageUrl;
+                description.textContent = element.description;
+                rec_div.id = "recommendation";
+
+                anchor_tag.href = "#";
+                anchor_tag.textContent = "Visit";
+
+                rec_div.appendChild(image);
+                text_div.appendChild(namee);
+                text_div.appendChild(description);
+                text_div.appendChild(anchor_tag);
+                rec_div.appendChild(text_div);
+                rec_div_parent.appendChild(rec_div);
+
+                
 
 
-                }
             }
         }
-
-
-
-
-        //logic for handling form submission
-        if (window.location.href.endsWith('contact_us.html')) {
-            var form = document.getElementById("form");
-            form.onsubmit = (e) => {
-                e.preventDefault();
-                //Add other logic for handling contact us form submission 
-            };
-        }
+        rec_div_parent.style.cssText = 'z-index: 999; position: absolute;top: 75px;display: flex;flex-direction: column;right: 80px; width: 40vw; overflow-Y: scroll';
     }
+
+
+
+
+    //logic for handling form submission
+    if (window.location.href.endsWith('contact_us.html')) {
+        var form = document.getElementById("form");
+        form.onsubmit = (e) => {
+            e.preventDefault();
+            //Add other logic for handling contact us form submission 
+        };
+    }
+}

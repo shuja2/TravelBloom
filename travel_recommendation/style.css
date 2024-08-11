@@ -304,7 +304,7 @@ form #submit{
     max-height: 90%;
 }
 #recommendation{
-    margin: 0px 0px 10px;
+    margin: 0px 2px 10px 0px;
 }
 #recommendation img{
     margin: 0px;
@@ -335,7 +335,14 @@ form #submit{
 }
 #recommendation p{
     margin: 0px;
+    margin-bottom: 15px;
     padding: 0px 10px;
     color: black;
 }
-
+#recommendation a{
+    background-color: #037477;
+    border: none;
+    padding: 7px 12px;
+    border-radius: 15px;
+    font-size: 18px;
+}

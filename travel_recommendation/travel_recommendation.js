@@ -1,11 +1,5 @@
 window.onload = (event) => {
-    // function isTempleRelated(word) {
-    //     // Regular expression to match various forms of "temples"
-    //     const templeRegex = /^(temples?|temple\w+)$/i;
 
-    //     // Test if the word matches the regular expression
-    //     return templeRegex.test(word);
-    //   }
     function isTempleRelated(word) {
         if (word.toLowerCase().includes("temple") || word.toLowerCase().includes("temples")) {
             return true;
@@ -13,6 +7,7 @@ window.onload = (event) => {
             return false;
         }
     }
+    
     function isBeachRelated(word1) {
         if (word1.toLowerCase().includes("beach") || word1.toLowerCase().includes("beaches")) {
             return true;
@@ -20,6 +15,7 @@ window.onload = (event) => {
             return false;
         }
     }
+    
     function isCountryRelated(word2) {
         if (word2.toLowerCase().includes("country") || word2.toLowerCase().includes("countries")) {
             return true;
@@ -37,6 +33,7 @@ window.onload = (event) => {
     clear_btn.addEventListener("click", () => {
         document.getElementById("recommendations").innerHTML = "";
         document.getElementById("recommendations").style.display = "none";
+        search.value = "";
     })
     //event listeners
 
